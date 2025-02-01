@@ -1,0 +1,29 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Convert Mermaid to SVG file",
+            "type": "shell",
+            "command": "mmdc",
+            "args": [
+                "-i", "${file}",
+                "-o", "${workspaceFolder}/.vscode/output.svg"
+            ],
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "Convert Mermaid to SVG file & Open converted file",
+            "type": "shell",
+            "command": "code",
+            "args": [
+                "${workspaceFolder}/.vscode/output-1.svg"
+            ],
+            "problemMatcher": [],
+            "dependsOn": ["Convert Mermaid to SVG file"]
+        }
+    ]
+}
